@@ -39,10 +39,7 @@ if __name__ == '__main__':
 
     config = Settings()
 
-    client = EvernoteClient(
-        token=config.EVERNOTE_PERSONAL_TOKEN,
-        sandbox=False
-    )
+    client = EvernoteClient(token=config.EVERNOTE_PERSONAL_TOKEN)
     note_store = client.get_note_store()
 
     notes = get_notebook_list(note_store, config.INBOX_NOTEBOOK_GUID, args.number).notes
